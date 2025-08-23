@@ -8,7 +8,6 @@ readme = "README.md"
 repository = "https://github.com/darrkenn/edar"
 license = "MIT"
 keywords = ["audio", "metadata"]
-categories = ["audio", "music"]
 
 [dependencies]
 lofty = "0.22.4"
