@@ -14,8 +14,7 @@ steps:
 
 - script: |
     cargo install cargo2junit
-    RUSTC_BOOTSTRAP=1
-    cargo test -- unstable-options --format json --report-time | cargo2junit > results.xml
+    RUSTC_BOOTSTRAP=1 cargo test -- -Z unstable-options --format json --report-time | cargo2junit > results.xml
   displayName: 'Run Tests'
 
 - task: PublishTestResults@2
