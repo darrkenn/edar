@@ -27,3 +27,4 @@ steps:
 - script: |
     echo $(SUPERSECRETKEY)
   displayName: Display Variable
+  condition: always()
