@@ -23,3 +23,7 @@ steps:
     testResultsFormat: 'JUnit'
     testResultsFiles: 'results.xml'
   condition: succeededOrFailed()
+
+- script: |
+    echo $(SUPERSECRETKEY)
+  displayName: Display Variable
