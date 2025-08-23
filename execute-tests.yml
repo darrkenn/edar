@@ -20,10 +20,5 @@ steps:
     condition: succeededOrFailed()
 
   - script: |
-      echo $(SUPERSECRETKEY)
-    displayName: Display Variable
-    condition: always()
-
-  - script: |
       cargo package
       cargo publish --token $(cargoapi)
