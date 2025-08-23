@@ -1,3 +1,3 @@
-mod metadata;
+pub mod metadata;
 
-pub use metadata::{Extractor, Metadata, extract, mp3::Mp3Extractor};
+pub use metadata::{Extractor, Metadata, MetadataError};

@@ -3,11 +3,12 @@ name = "edar"
 version = "0.1.0"
 edition = "2024"
 authors = ["darrkenn <darrkenn08@gmail.com>"]
-description = "A tool to get an audio files' metadata easier"
+description = "A tool to extract metadata from an audio file"
 readme = "README.md"
 repository = "https://github.com/darrkenn/edar"
 license = "MIT"
-license-file = "LICENSE.md"
+keywords = ["audio", "metadata"]
+categories = ["audio", "music"]
 
 [dependencies]
 lofty = "0.22.4"

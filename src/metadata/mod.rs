@@ -1,11 +1,8 @@
-use std::{path::Path, time::Duration};
+use std::time::Duration;
 
-use crate::metadata::mp3::Mp3Extractor;
+pub mod extractor;
 
-pub mod flac;
-pub mod mp3;
-pub mod ogg;
-pub mod wav;
+pub use extractor::Extractor;
 
 #[derive(Debug, Clone)]
 pub struct Metadata {
@@ -26,20 +23,4 @@ pub enum MetadataError {
     ReadError,
     ExtensionError,
     NoTag,
-}
-
-pub trait Extractor {
-    fn extract_metadata(file_path: &str) -> Result<Metadata, MetadataError>;
-}
-
-pub fn extract(file_path: &str) -> Result<Metadata, MetadataError> {
-    let extension = Path::new(file_path)
-        .extension()
-        .and_then(|e| e.to_str())
-        .ok_or(MetadataError::ExtensionError)?;
-
-    match extension {
-        "mp3" => Mp3Extractor::extract_metadata(file_path),
-        _ => todo!(),
-    }
 }
