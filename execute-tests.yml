@@ -13,6 +13,13 @@ steps:
 - checkout: self
 
 - script: |
-    ls -la $(Build.SourcesDirectory)
-    cargo test
+    cargo install cargo2junit
+    RUSTC_BOOTSTRAP=1
+    cargo test -- -Z unstable-options --format json --report-time | cargo2junit > results.xml
   displayName: 'View file structure'
+
+- task: PublishTestResults@2
+  inputs: 
+    testResultsFormat: 'JUnit'
+    testResultsFiles: 'results.xml'
+  condition: succeededOrFailed()
