@@ -1,3 +1,3 @@
 pub mod metadata;
 
-pub use metadata::{Extractor, Metadata, MetadataError};
+pub use metadata::{Extractor, FormatDuration, Metadata, MetadataError};

@@ -1,6 +1,6 @@
 use std::time::Duration;
 
-use edar::Extractor;
+use edar::{Extractor, FormatDuration};
 
 #[test]
 fn test_mp3_extractor() {
@@ -17,6 +17,8 @@ fn test_mp3_extractor() {
 
     assert_eq!(48000, metadata.sample_rate.unwrap());
     assert_eq!(1, metadata.channels.unwrap());
+
+    assert_eq!("00:01", metadata.duration.format());
 }
 
 #[test]
@@ -34,6 +36,8 @@ fn test_ogg_extractor() {
 
     assert_eq!(48000, metadata.sample_rate.unwrap());
     assert_eq!(1, metadata.channels.unwrap());
+
+    assert_eq!("00:01", metadata.duration.format());
 }
 
 #[test]
@@ -51,4 +55,6 @@ fn test_flac_extractor() {
 
     assert_eq!(48000, metadata.sample_rate.unwrap());
     assert_eq!(1, metadata.channels.unwrap());
+
+    assert_eq!("00:01", metadata.duration.format());
 }
