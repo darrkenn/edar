@@ -16,13 +16,11 @@ pub struct Metadata {
     pub duration: Option<Duration>,
     pub sample_rate: Option<u32>,
     pub channels: Option<u8>,
+    pub has_tag: bool,
 }
 #[derive(Debug)]
 pub enum MetadataError {
-    UnsupportedFormat,
     ReadError,
-    ExtensionError,
-    NoTag,
 }
 
 impl fmt::Display for Metadata {
